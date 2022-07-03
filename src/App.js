@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from 'react';
+import { fishListOptions, fetchData } from './utils/fetchData'
 
 function App() {
+  const [data, setData] = useState([])
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      let exercisesData = [];
+      exercisesData = await fetchData('https://list-of-freshwater-aquarium-fish-species.p.rapidapi.com/species', fishListOptions);
+      setData(exercisesData);
+    }
+    fetchExercisesData();
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {console.log(data)}
     </div>
   );
 }
