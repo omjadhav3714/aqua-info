@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { fishListOptions, fetchData } from './utils/fetchData'
+import React, { useState } from 'react';
+import SearchFishes from './components/SearchFishes';
+import Fishes from './components/Fishes';
 
 function App() {
-  const [data, setData] = useState([])
-  useEffect(() => {
-    const fetchExercisesData = async () => {
-      let exercisesData = [];
-      exercisesData = await fetchData('https://list-of-freshwater-aquarium-fish-species.p.rapidapi.com/species', fishListOptions);
-      setData(exercisesData);
-    }
-    fetchExercisesData();
-  }, [])
+  const [fishes, setFishes] = useState([]);
+
   return (
     <div className="App">
-      {console.log(data)}
+      <SearchFishes setFishes={setFishes} />
+      <Fishes fishes={fishes} setFishes={setFishes} />
     </div>
   );
 }
