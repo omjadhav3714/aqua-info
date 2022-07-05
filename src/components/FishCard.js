@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Typography, Card, CardContent, CardMedia } from '@mui/material'
+import fishImg from './../assets/fish.png'
 
 const FishCard = ({ fish }) => {
     return (
@@ -18,7 +19,7 @@ const FishCard = ({ fish }) => {
             <CardMedia
                 component="img"
                 sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
-                image={fish.imageURL}
+                image={fish.imageURL ? fish.imageURL : fishImg}
                 alt={fish.imageLabel}
             />
         </Card>
