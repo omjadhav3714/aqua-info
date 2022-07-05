@@ -53,7 +53,7 @@ const SearchFishes = ({ setFishes }) => {
                     }}
                     value={search}
                     onChange={(e) => setSearch(e.target.value.toLowerCase())}
-                    placeholder="Search Exercises"
+                    placeholder="Search Fishes"
                     type="text"
                 />
                 <Button
