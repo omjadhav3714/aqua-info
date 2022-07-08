@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+.hero-banner-img {
+  position: absolute;
+  right: 40px;
+  top: 0px;
+  width: 600px;
+  height: 900px;
+  margin-top: -330px;
+
+}
+
+@media screen and (max-width:1200px) {
+  .hero-banner-img {
+    display: none;
+  }
+
+}

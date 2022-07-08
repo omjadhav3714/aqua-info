@@ -29,6 +29,7 @@ const SearchFishes = ({ setFishes }) => {
             mt="37px"
             justifyContent="center"
             p="20px"
+            sx={{ paddingTop: '50px' }}
         >
             <Typography
                 fontWeight={700}
